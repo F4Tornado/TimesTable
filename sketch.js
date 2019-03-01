@@ -8,6 +8,7 @@ const palette = {
 }
 let points = 200;
 let multiplier = 0;
+let x = 1;
 let cs = [125, 276]
 let c = cs[0];
 
@@ -35,7 +36,10 @@ function draw() {
   }
   cs[1] = sin(millis() / 1000) * 100 + 200;
   cs[0] = cs[1] - 100
-  multiplier += 0.005
+  multiplier += 0.005;
+  if (multiplier >= 200) {
+    multiplier = 0
+  }
 }
 
 function polarToCart(v) {
